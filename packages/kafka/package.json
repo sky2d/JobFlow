@@ -1,0 +1,12 @@
+{
+  "name": "@background-job/kafka",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "@background-job/types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

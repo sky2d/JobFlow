@@ -1,0 +1,11 @@
+{
+  "name": "@background-job/logger",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "dependencies": {
+    "pino": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
