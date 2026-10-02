@@ -1,0 +1,24 @@
+config:
+  target: "http://localhost:4000" # Change this if your API runs on a different port
+  phases:
+    - duration: 60 # Run the test for 60 seconds
+      arrivalRate: 10 # Start with 10 new users per second
+      rampTo: 50 # Ramp up to 50 new users per second
+      name: "Warm up and ramp to peak load"
+    - duration: 60 # Sustain the peak load for another 60 seconds
+      arrivalRate: 50 # 50 users per second
+      name: "Sustained peak load"
+
+scenarios:
+  - name: "Create a send-email job"
+    flow:
+      - post:
+          url: "/api/jobs"
+          json:
+            type: "send-email"
+            payload:
+              to: "loadtest@example.com"
+              subject: "Load Test Email"
+              body: "This is a load test."
+          expect:
+            - statusCode: 202
